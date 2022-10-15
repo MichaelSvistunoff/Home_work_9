@@ -1,11 +1,14 @@
 ﻿Console.Write("Enter number: ");
+int M = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter number: ");
 int N = int.Parse(Console.ReadLine()!);
 
-Console.WriteLine(GetRowFromMaxToMinN(N));
+Console.WriteLine(GetSumFromMToN(M, N));
 
-string GetRowFromMaxToMinN(int number) {
-    if (number == 1) {
-        return number.ToString();
+int GetSumFromMToN(int numOne, int numTwo) {
+    if (numOne == numTwo) {
+        return numOne;
     }
-    return (number + " " + GetRowFromMaxToMinN(number-1));
+    return numOne + GetSumFromMToN(numOne+1, numTwo);
 }
